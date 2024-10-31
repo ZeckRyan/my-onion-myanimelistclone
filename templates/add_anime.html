@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container bg-light">
+    <nav class="breadcrumb bg-light p-3">
+        <a href="./home" class="breadcrumb-item">Home</a>
+        <span class="breadcrumb-item active"><a href="./add">Add Anime</a></span>
+    </nav>
+    <div class="row d-flex justify-content-center">
+        <section class="col-md-9 bg-white border border-light p-4" style="border-width: 20px !important; border-top: none !important; border-bottom: none !important;">
+            <h2 class="text-center">Add Anime</h2>
+            <p class="text-center">You can add your favorite anime to your library. So you cannot forget your waifu <3</p>
+            <div class="row border-primary p-4 justify-content-center">
+                <section class="col-12 col-md-8" aria-label="anime list">
+                    <form method="post" class="text-center">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title:</label>
+                            <input type="text" id="title" name="title" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genres" class="form-label">Genre:</label>
+                            <select name="genre" id="genres" class="form-select" required>
+                                <option value="" disabled selected>Select Genre</option>
+                                <option value="Comedy">Comedy</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Isekai">Isekai</option>
+                                <option value="Romance">Romance</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <span class="me-2">Rating:</span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star1" name="rating" value="1" required>
+                                <label for="star1">⭐</label>
+                            </span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star2" name="rating" value="2" required>
+                                <label for="star2">⭐⭐</label>
+                            </span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star3" name="rating" value="3" required>
+                                <label for="star3">⭐⭐⭐</label>
+                            </span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star4" name="rating" value="4" required>
+                                <label for="star4">⭐⭐⭐⭐</label>
+                            </span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star5" name="rating" value="5" required>
+                                <label for="star5">⭐⭐⭐⭐⭐</label>
+                            </span>
+                        </div>
+                        <input type="submit" value="Add Anime" class="btn btn-primary">
+                    </form>
+                </section>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}

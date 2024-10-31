@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="container bg-light">
+    <nav class="breadcrumb bg-light p-3">
+        <a href="./home" class="breadcrumb-item">Home</a>
+        <span class="breadcrumb-item active"><a href="./edit">Edit Anime</a></span>
+    </nav>
+    <div class="row d-flex justify-content-center">
+        <section class="col-md-9 bg-white border border-light p-4" style="border-width: 20px !important; border-top: none !important; border-bottom: none !important;">
+            <h2 class="text-center">Edit Anime</h2>
+            <p class="text-center">Modify the details of your favorite anime.</p>
+            <div class="row border-primary p-4 justify-content-center">
+                <section class="col-12 col-md-8" aria-label="edit anime form">
+                    <form method="post" class="text-center">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title:</label>
+                            <input type="text" id="title" name="title" class="form-control" value="{{ title }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="genres" class="form-label">Genre:</label>
+                            <select name="genre" id="genres" class="form-select" required>
+                                <option value="" disabled>Select Genre</option>
+                                <option value="comedy" {% if genre == 'comedy' %}selected{% endif %}>Comedy</option>
+                                <option value="slice-of-life" {% if genre == 'slice-of-life' %}selected{% endif %}>Slice of Life</option>
+                                <option value="horror" {% if genre == 'horror' %}selected{% endif %}>Horror</option>
+                                <option value="isekai" {% if genre == 'isekai' %}selected{% endif %}>Isekai</option>
+                                <option value="romance" {% if genre == 'romance' %}selected{% endif %}>Romance</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <span class="me-2">Rating:</span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star1" name="rating" value="1" {% if rating == 1 %}checked{% endif %} required>
+                                <label for="star1">⭐</label>
+                            </span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star2" name="rating" value="2" {% if rating == 2 %}checked{% endif %} required>
+                                <label for="star2">⭐⭐</label>
+                            </span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star3" name="rating" value="3" {% if rating == 3 %}checked{% endif %} required>
+                                <label for="star3">⭐⭐⭐</label>
+                            </span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star4" name="rating" value="4" {% if rating == 4 %}checked{% endif %} required>
+                                <label for="star4">⭐⭐⭐⭐</label>
+                            </span>
+                            <span style="display: inline-block; margin-right: 10px;">
+                                <input type="radio" id="star5" name="rating" value="5" {% if rating == 5 %}checked{% endif %} required>
+                                <label for="star5">⭐⭐⭐⭐⭐</label>
+                            </span>
+                        </div>
+                        <input type="submit" value="Save Changes" class="btn btn-primary">
+                    </form>
+                </section>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock %}
